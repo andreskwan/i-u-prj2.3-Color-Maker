@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="prj2_3___Color_Maker_with_slider" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,61 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Jk-vjt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="90" y="316" width="220" height="220"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-YB-TNy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="90" y="44" width="220" height="220"/>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xQK-Jk-vjt" firstAttribute="top" secondItem="Cku-YB-TNy" secondAttribute="bottom" constant="52" id="3y7-aE-anI"/>
+                            <constraint firstAttribute="centerX" secondItem="xQK-Jk-vjt" secondAttribute="centerX" id="Vez-NO-maN"/>
+                            <constraint firstItem="Cku-YB-TNy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="bfJ-QO-eL4"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xQK-Jk-vjt" secondAttribute="bottom" constant="64" id="f0Y-W9-ScT"/>
+                            <constraint firstAttribute="centerX" secondItem="Cku-YB-TNy" secondAttribute="centerX" id="gpY-29-ST0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xQK-Jk-vjt"/>
+                                <exclude reference="Cku-YB-TNy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="bfJ-QO-eL4"/>
+                                <exclude reference="gpY-29-ST0"/>
+                                <exclude reference="3y7-aE-anI"/>
+                                <exclude reference="Vez-NO-maN"/>
+                                <exclude reference="f0Y-W9-ScT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xQK-Jk-vjt"/>
+                                <include reference="Cku-YB-TNy"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="bfJ-QO-eL4"/>
+                                <include reference="gpY-29-ST0"/>
+                                <include reference="3y7-aE-anI"/>
+                                <include reference="Vez-NO-maN"/>
+                                <include reference="f0Y-W9-ScT"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="418"/>
         </scene>
     </scenes>
 </document>

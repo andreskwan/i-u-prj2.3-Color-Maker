@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,26 +19,136 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQK-Jk-vjt">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="90" y="316" width="220" height="220"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yT-X3-Bjd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="8" y="8" width="204" height="204"/>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xQK-Jk-vjt" secondAttribute="height" multiplier="1:1" id="uyV-Vs-m1v"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3yT-X3-Bjd"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="uyV-Vs-m1v"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="3yT-X3-Bjd"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="uyV-Vs-m1v"/>
+                                    </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cku-YB-TNy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="90" y="44" width="220" height="220"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF0-0S-bbP">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="24" y="56" width="32" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-lV-p7r">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="24" y="94" width="48" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-MP-eVJ">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="96" y="52" width="118" height="31"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="setColor:" destination="vXZ-lx-hvc" eventType="valueChanged" id="X85-fE-zPe"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VDR-ed-9vs">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="96" y="90" width="118" height="31"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="setColor:" destination="vXZ-lx-hvc" eventType="valueChanged" id="3rH-5H-KFG"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kZ0-Hl-h2l">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="96" y="128" width="118" height="31"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="setColor:" destination="vXZ-lx-hvc" eventType="valueChanged" id="tu5-rn-SGD"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3G-QL-hde">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.12941176470588237" green="0.086274509803921567" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="24" y="132" width="36" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cku-YB-TNy" secondAttribute="height" multiplier="1:1" id="UTH-sw-SJK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="zF0-0S-bbP"/>
+                                        <exclude reference="2Bg-lV-p7r"/>
+                                        <exclude reference="K4P-MP-eVJ"/>
+                                        <exclude reference="VDR-ed-9vs"/>
+                                        <exclude reference="kZ0-Hl-h2l"/>
+                                        <exclude reference="r3G-QL-hde"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="UTH-sw-SJK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="zF0-0S-bbP"/>
+                                        <include reference="2Bg-lV-p7r"/>
+                                        <include reference="K4P-MP-eVJ"/>
+                                        <include reference="VDR-ed-9vs"/>
+                                        <include reference="kZ0-Hl-h2l"/>
+                                        <include reference="r3G-QL-hde"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="UTH-sw-SJK"/>
+                                    </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xQK-Jk-vjt" firstAttribute="top" secondItem="Cku-YB-TNy" secondAttribute="bottom" constant="52" id="3y7-aE-anI"/>
-                            <constraint firstAttribute="centerX" secondItem="xQK-Jk-vjt" secondAttribute="centerX" id="Vez-NO-maN"/>
-                            <constraint firstItem="Cku-YB-TNy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="bfJ-QO-eL4"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xQK-Jk-vjt" secondAttribute="bottom" constant="64" id="f0Y-W9-ScT"/>
-                            <constraint firstAttribute="centerX" secondItem="Cku-YB-TNy" secondAttribute="centerX" id="gpY-29-ST0"/>
+                            <constraint firstItem="xQK-Jk-vjt" firstAttribute="top" secondItem="Cku-YB-TNy" secondAttribute="bottom" constant="52" id="2Ep-oh-4X5"/>
+                            <constraint firstItem="Cku-YB-TNy" firstAttribute="trailing" secondItem="xQK-Jk-vjt" secondAttribute="trailing" id="2n4-5H-Ew8"/>
+                            <constraint firstItem="Cku-YB-TNy" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Fcx-w6-wRn"/>
+                            <constraint firstItem="Cku-YB-TNy" firstAttribute="leading" secondItem="xQK-Jk-vjt" secondAttribute="leading" id="QcG-YS-qkY"/>
+                            <constraint firstItem="xQK-Jk-vjt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="316" id="Zpu-2T-Im7"/>
+                            <constraint firstItem="Cku-YB-TNy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="pBg-BF-jaV"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -45,11 +156,12 @@
                                 <exclude reference="Cku-YB-TNy"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bfJ-QO-eL4"/>
-                                <exclude reference="gpY-29-ST0"/>
-                                <exclude reference="3y7-aE-anI"/>
-                                <exclude reference="Vez-NO-maN"/>
-                                <exclude reference="f0Y-W9-ScT"/>
+                                <exclude reference="2n4-5H-Ew8"/>
+                                <exclude reference="Fcx-w6-wRn"/>
+                                <exclude reference="QcG-YS-qkY"/>
+                                <exclude reference="pBg-BF-jaV"/>
+                                <exclude reference="2Ep-oh-4X5"/>
+                                <exclude reference="Zpu-2T-Im7"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -58,18 +170,28 @@
                                 <include reference="Cku-YB-TNy"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bfJ-QO-eL4"/>
-                                <include reference="gpY-29-ST0"/>
-                                <include reference="3y7-aE-anI"/>
-                                <include reference="Vez-NO-maN"/>
-                                <include reference="f0Y-W9-ScT"/>
+                                <include reference="2n4-5H-Ew8"/>
+                                <include reference="Fcx-w6-wRn"/>
+                                <include reference="QcG-YS-qkY"/>
+                                <include reference="pBg-BF-jaV"/>
+                                <include reference="2Ep-oh-4X5"/>
+                                <include reference="Zpu-2T-Im7"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="r3G-QL-hde" id="YmY-Gj-w2D"/>
+                        <outlet property="blueSlider" destination="kZ0-Hl-h2l" id="tuK-V1-QME"/>
+                        <outlet property="colorSetView" destination="3yT-X3-Bjd" id="XCg-kc-Mjn"/>
+                        <outlet property="greenLabel" destination="2Bg-lV-p7r" id="LSP-7d-MT1"/>
+                        <outlet property="greenSlider" destination="VDR-ed-9vs" id="K9U-Mv-sDR"/>
+                        <outlet property="redLabel" destination="zF0-0S-bbP" id="The-pl-6Z3"/>
+                        <outlet property="redSlider" destination="K4P-MP-eVJ" id="rsA-wb-X06"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="418"/>
+            <point key="canvasLocation" x="1203" y="364"/>
         </scene>
     </scenes>
 </document>
